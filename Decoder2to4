@@ -1,0 +1,12 @@
+/***** 2TO4 DECODER *****/
+
+module Decoder2to4(address,regno);
+
+ input[1:0] address;
+ output[3:0] regno;
+ and a0 (regno[0],~address[1],~address[0]);
+ and a1 (regno[1],~address[1],address[0]);
+ and a2 (regno[2],address[1],~address[0]);
+ and a3 (regno[3],address[1],address[0]);
+ 
+endmodule
